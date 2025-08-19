@@ -31,13 +31,20 @@ app.post("/api/download", async (req, res) => {
     const apiRes = await axios.post(
       "https://www.tikwm.com/api/",
       { url },
-      { headers: { "Content-Type": "application/json" } }
+      { 
+        headers: { 
+          "Content-Type": "application/json",
+          "User-Agent": "Mozilla/5.0" // thêm User-Agent cho chắc chắn
+        } 
+      }
     );
+
+    console.log("📩 Toàn bộ phản hồi TikWM:", apiRes.data);
 
     if (apiRes.data && apiRes.data.data) {
       const d = apiRes.data.data;
 
-      console.log("🎬 API trả về:", d); // Debug thông tin video
+      console.log("🎬 API trả về:", d);
 
       return res.json({
         success: true,
