@@ -5,6 +5,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
+const https = require("https");
 
 const app = express();
 const PORT = 3000;
@@ -62,7 +63,24 @@ app.post("/api/download", async (req, res) => {
   }
 });
 
+// Proxy tải file qua server (fix iOS)
+app.get("/download-proxy", async (req, res) => {
+  const { url } = req.query;
+  if (!url) return res.status(400).send("Thiếu URL");
+
+  res.setHeader("Content-Disposition", 'attachment; filename="tiktok.mp4"');
+  res.setHeader("Content-Type", "video/mp4");
+
+  https.get(url, (videoRes) => {
+    videoRes.pipe(res);
+  }).on("error", (err) => {
+    console.error("Lỗi stream:", err.message);
+    res.status(500).send("Không tải được video.");
+  });
+});
+
 // Khởi động server
 app.listen(PORT, () => {
   console.log(`✅ Server chạy tại: http://localhost:${PORT}`);
 });
+
