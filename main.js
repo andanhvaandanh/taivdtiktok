@@ -37,10 +37,13 @@ async function downloadVideo() {
       }
 
       if (downloadUrl) {
-        // ✅ Thay vì ép tải (iOS không hỗ trợ), hiển thị link để mở video
+        // ✅ Sử dụng proxy server để ép iOS tải về
+        const proxyUrl = `/download-proxy?url=${encodeURIComponent(downloadUrl)}`;
+
         resultBox.innerHTML = `
           <p>✅ Link sẵn sàng (${quality.toUpperCase()})</p>
-          <a href="${downloadUrl}" target="_blank">📥 Mở video (ấn giữ để Lưu video trên iOS)</a>
+          <a href="${proxyUrl}">📥 Tải về</a>
+          <p><small>Trên iOS: bấm giữ link hoặc mở video → chọn Lưu vào Ảnh/Tệp</small></p>
         `;
       } else {
         resultBox.innerHTML = `<p>❌ Video này không có chất lượng ${quality.toUpperCase()}.</p>`;
