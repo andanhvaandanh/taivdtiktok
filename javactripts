@@ -1,0 +1,22 @@
+document.getElementById('tiktokForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const url = document.getElementById('tiktokUrl').value;
+    document.getElementById('result').innerHTML = "Đang xử lý link: " + url;
+
+    try {
+        const response = await fetch('/api/download', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url })
+        });
+        const data = await response.json();
+        if (data.success) {
+            document.getElementById('result').innerHTML =
+                `<a href="${data.downloadUrl}" target="_blank">Tải video tại đây</a>`;
+        } else {
+            document.getElementById('result').innerHTML = "Không thể tải video.";
+        }
+    } catch (err) {
+        document.getElementById('result').innerHTML = "Có lỗi xảy ra.";
+    }
+});

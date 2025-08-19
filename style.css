@@ -1,0 +1,134 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Toàn bộ trang */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Khung chính */
+.container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Tiêu đề */
+header h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #5a3ea1;
+}
+
+header p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-box input,
+.form-box select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 8px rgba(118, 75, 162, 0.5);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button-group button:first-child {
+  background: #667eea;
+  color: white;
+}
+
+.button-group button:first-child:hover {
+  background: #5563c1;
+}
+
+.button-group .clear-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.button-group .clear-btn:hover {
+  background: #c0392b;
+}
+
+/* Kết quả */
+#result {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+#result a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#result a:hover {
+  background: #1e874b;
+}
+
+/* Footer */
+footer {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

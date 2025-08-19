@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tải Video TikTok Không Watermark</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📥 Tải Video TikTok</h1>
+      <p>Dán link TikTok vào ô bên dưới và chọn chất lượng</p>
+    </header>
+
+    <main>
+      <div class="form-box">
+        <input type="url" id="tiktokUrl" placeholder="https://www.tiktok.com/@user/video/123456" required>
+
+        <select id="quality">
+          <option value="play">720p (Không watermark)</option>
+          <option value="hdplay">1080p (HD)</option>
+          <option value="wmplay">720p (Có watermark)</option>
+          <option value="music">MP3 (Chỉ nhạc)</option>
+        </select>
+
+        <div class="button-group">
+          <button onclick="downloadVideo()">⬇️ Tải về</button>
+          <button class="clear-btn" onclick="clearInput()">❌ Xóa link</button>
+        </div>
+      </div>
+
+      <div id="result"></div>
+    </main>
+
+    <footer>
+      <p>© 2024 taivdtiktok - Tất cả quyền được bảo lưu.<br>
+      Dịch vụ này không liên kết với TikTok, Douyin, hoặc công ty con của họ.</p>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
