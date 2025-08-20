@@ -60,7 +60,44 @@
 
   <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9740749,document.createElement('script'))</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nền video</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    video.bg {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 40vh;
+      text-shadow: 2px 2px 5px black; /* Giúp chữ nổi bật hơn */
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg">
+    <source src="nenweb.mp4" type="video/mp4">
+    Trình duyệt không hỗ trợ video nền.
+  </video>
 
+  <div class="content">
+    <h1>Website của tôi</h1>
+    <p>Nền động bằng video nenweb.mp4</p>
+  </div>
  
 
 
