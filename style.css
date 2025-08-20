@@ -213,3 +213,51 @@ body {
   }
 }
 
+/* Responsive cho màn hình nhỏ (max 480px - nhiều điện thoại Android/iPhone cỡ phổ biến) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 5px;
+  }
+
+  .navbar a {
+    margin: 0 8px;
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header p {
+    font-size: 12px;
+  }
+
+  .form-box input,
+  .form-box select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .button-group button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #result a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+
