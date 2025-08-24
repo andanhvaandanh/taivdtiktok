@@ -1,0 +1,80 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Menu */
+nav {
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Tiêu đề */
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 15px 0 10px 0;
+}
+
+/* Paragraph & list */
+p {
+  margin-bottom: 15px;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+/* Liên kết trong nội dung */
+a {
+  color: #4CAF50;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Đường kẻ dưới menu */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Footer đơn giản */
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
