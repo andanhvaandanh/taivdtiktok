@@ -1,18 +1,20 @@
-const http = require('http');
+// ping.js
+const fetch = require("node-fetch");
 
-// Thay URL thành URL của server bạn trên Render
-const url = 'http://your-app-name.onrender.com';
+const URL = "https://ten-app-cua-ban.onrender.com"; // đổi thành link app bạn
+const interval = 5 * 60 * 1000; // 5 phút
 
-function pingServer() {
-  http.get(url, (res) => {
-    console.log(`${new Date().toLocaleTimeString()} - Ping status: ${res.statusCode}`);
-  }).on('error', (err) => {
-    console.log(`${new Date().toLocaleTimeString()} - Error: ${err.message}`);
-  });
+async function keepAlive() {
+  try {
+    const res = await fetch(URL);
+    console.log(`${new Date().toISOString()} - Ping status: ${res.status}`);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-// Ping ngay khi chạy
-pingServer();
+// ping liên tục
+setInterval(keepAlive, interval);
 
-// Ping mỗi 5 phút (300000 ms)
-setInterval(pingServer, 5 * 60 * 1000);
+// ping ngay lần đầu tiên
+keepAlive();
