@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://taivdtiktok.onrender.com/sitemap.xml
