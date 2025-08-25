@@ -8,7 +8,7 @@ async function downloadVideo() {
     return;
   }
 
-  resultBox.innerHTML = `<p>⏳ Đang xử lý...</p>`;
+  resultBox.innerHTML = `<p class="loading">⏳ Đang xử lý...</p>`;
 
   try {
     const res = await fetch("/api/download", {
@@ -37,13 +37,13 @@ async function downloadVideo() {
       }
 
       if (downloadUrl) {
-        // ✅ Sử dụng proxy server để ép iOS tải về
+        // ✅ Proxy để iOS/Mobile ép tải về
         const proxyUrl = `/download-proxy?url=${encodeURIComponent(downloadUrl)}`;
 
         resultBox.innerHTML = `
           <p>✅ Link sẵn sàng (${quality.toUpperCase()})</p>
-          <a href="${proxyUrl}">📥 Tải về</a>
-          <p><small>Trên iOS: bấm giữ link hoặc mở video → chọn Lưu vào Ảnh/Tệp</small></p>
+          <a href="${proxyUrl}" download>📥 Tải về</a>
+          <p><small>Trên iPhone: bấm giữ link → chọn "Tải về" hoặc "Lưu vào Ảnh/Tệp".</small></p>
         `;
       } else {
         resultBox.innerHTML = `<p>❌ Video này không có chất lượng ${quality.toUpperCase()}.</p>`;
