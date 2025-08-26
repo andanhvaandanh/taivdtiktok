@@ -287,4 +287,96 @@ body {
   }
 }
 
+/* ===== Mobile Optimization ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0 10px; /* lề nhỏ cho mobile */
+  overflow-x: hidden;
+}
+
+/* Header & Menu */
+header {
+  width: 100%;
+  padding: 10px 0;
+}
+
+nav {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column; /* xếp link thành cột */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  width: 100%;
+  margin: 5px 0;
+  text-align: center;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 5px;
+  white-space: normal; /* chữ dài xuống dòng */
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Buttons */
+button, a.button {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 0;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Images & Videos */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sections & Containers */
+.container, .content {
+  padding: 0 10px;
+}
+
+/* Flex layouts */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .flex-row {
+    flex-direction: column;
+  }
+}
+
+/* Footer */
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Optional: tăng độ tương phản cho link dễ đọc */
+a {
+  color: #1a73e8;
+  word-wrap: break-word;
+}
 
