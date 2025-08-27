@@ -61,3 +61,8 @@ function clearInput() {
   document.getElementById("tiktokUrl").value = "";
   document.getElementById("result").innerHTML = "";
 }
+
+// Toggle menu mobile
+document.getElementById("menu-toggle").addEventListener("click", function() {
+  document.getElementById("menu").classList.toggle("active");
+});
