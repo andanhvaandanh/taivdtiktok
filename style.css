@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset chung */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +14,10 @@ body {
   align-items: center;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
+  padding-top: 60px; /* tránh bị menu che header */
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /* Khung chính */
@@ -34,7 +38,6 @@ header h1 {
   margin-bottom: 10px;
   color: #5a3ea1;
 }
-
 header p {
   font-size: 14px;
   color: #666;
@@ -47,7 +50,6 @@ header p {
   flex-direction: column;
   gap: 12px;
 }
-
 .form-box input,
 .form-box select {
   padding: 12px;
@@ -57,18 +59,15 @@ header p {
   outline: none;
   transition: 0.3s;
 }
-
 .form-box input:focus,
 .form-box select:focus {
   border-color: #764ba2;
   box-shadow: 0 0 8px rgba(118, 75, 162, 0.5);
 }
-
 .button-group {
   display: flex;
   gap: 10px;
 }
-
 .button-group button {
   flex: 1;
   padding: 12px;
@@ -79,21 +78,17 @@ header p {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .button-group button:first-child {
   background: #667eea;
   color: white;
 }
-
 .button-group button:first-child:hover {
   background: #5563c1;
 }
-
 .button-group .clear-btn {
   background: #e74c3c;
   color: white;
 }
-
 .button-group .clear-btn:hover {
   background: #c0392b;
 }
@@ -103,7 +98,6 @@ header p {
   margin-top: 20px;
   font-size: 15px;
 }
-
 #result a {
   display: inline-block;
   margin-top: 10px;
@@ -115,7 +109,6 @@ header p {
   font-weight: bold;
   transition: 0.3s;
 }
-
 #result a:hover {
   background: #1e874b;
 }
@@ -133,255 +126,7 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-
-/* Thanh công cụ trên cùng */
-.navbar {
-  width: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  padding: 14px 0;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  font-size: 15px;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #ffd700; /* vàng nổi bật khi hover */
-}
-
-/* Đẩy nội dung xuống dưới thanh menu */
-body {
-  padding-top: 60px; /* tránh bị menu che header */
-}
-
-/* Responsive cho mobile */
-@media (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 20px;
-    border-radius: 16px;
-  }
-
-  header h1 {
-    font-size: 22px;
-  }
-
-  header p {
-    font-size: 13px;
-  }
-
-  .form-box input,
-  .form-box select {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  .button-group button {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  #result a {
-    font-size: 15px;
-    padding: 10px 14px;
-  }
-}
-
-/* Cho màn hình rất nhỏ (iPhone SE, iPhone 5, 6, 7, 8) */
-@media (max-width: 375px) {
-  header h1 {
-    font-size: 20px;
-  }
-
-  .button-group {
-    flex-direction: column;
-  }
-
-  .button-group button {
-    width: 100%;
-  }
-}
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-}
-
-.navbar .logo {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.navbar .menu-toggle {
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: none; /* Ẩn trên desktop */
-}
-
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.navbar .nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.2s;
-}
-
-.navbar .nav-links li a:hover {
-  color: yellow;
-}
-
-/* Responsive cho mobile */
-@media (max-width: 768px) {
-  .navbar .menu-toggle {
-    display: block; /* Hiện nút ☰ trên mobile */
-  }
-
-  .navbar .nav-links {
-    display: none; /* Ẩn menu mặc định */
-    flex-direction: column;
-    background: #5b3aa8;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 220px;
-    border-radius: 8px;
-    padding: 10px 0;
-  }
-
-  .navbar .nav-links.show {
-    display: flex; /* Hiện menu khi click ☰ */
-  }
-
-  .navbar .nav-links li {
-    padding: 10px 20px;
-  }
-}
-
-/* ===== Mobile Optimization ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-size: 16px;
-  line-height: 1.5;
-  padding: 0 10px; /* lề nhỏ cho mobile */
-  overflow-x: hidden;
-}
-
-/* Header & Menu */
-header {
-  width: 100%;
-  padding: 10px 0;
-}
-
-nav {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-nav ul {
-  display: flex;
-  flex-direction: column; /* xếp link thành cột */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  width: 100%;
-  margin: 5px 0;
-  text-align: center;
-}
-
-nav ul li a {
-  display: block;
-  padding: 10px 5px;
-  white-space: normal; /* chữ dài xuống dòng */
-  font-size: 16px;
-  text-decoration: none;
-  color: #000;
-}
-
-/* Buttons */
-button, a.button {
-  width: 100%;
-  font-size: 18px;
-  padding: 12px 0;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-/* Images & Videos */
-img, video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Sections & Containers */
-.container, .content {
-  padding: 0 10px;
-}
-
-/* Flex layouts */
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .flex-row {
-    flex-direction: column;
-  }
-}
-
-/* Footer */
-footer {
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* Optional: tăng độ tương phản cho link dễ đọc */
-a {
-  color: #1a73e8;
-  word-wrap: break-word;
-}
-
-
-/* CSS cho menu */
+/* ====== MENU ====== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -389,13 +134,22 @@ a {
   padding: 12px 16px;
   background: linear-gradient(90deg, #6a11cb, #2575fc);
   color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
 .logo {
   font-size: 18px;
   font-weight: bold;
 }
-
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+  display: block; /* chỉ hiện trên mobile */
+}
 .menu {
   list-style: none;
   display: none;
@@ -408,23 +162,14 @@ a {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   padding: 10px;
 }
-
 .menu li {
   margin: 10px 0;
 }
-
 .menu li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
-
-.menu-toggle {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-/* Hiển thị menu khi active */
 .menu.active {
   display: flex;
 }
@@ -450,4 +195,88 @@ a {
   }
 }
 
+/* Responsive nhỏ */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+  header h1 { font-size: 22px; }
+  header p { font-size: 13px; }
+  .form-box input,
+  .form-box select { font-size: 15px; padding: 10px; }
+  .button-group button { font-size: 15px; padding: 10px; }
+  #result a { font-size: 15px; padding: 10px 14px; }
+}
+@media (max-width: 375px) {
+  header h1 { font-size: 20px; }
+  .button-group { flex-direction: column; }
+  .button-group button { width: 100%; }
+}
+/* ===================== Responsive Mobile ===================== */
 
+/* Cho màn hình rất nhỏ (iPhone SE, iPhone 5, 6, 7, 8) */
+@media (max-width: 375px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  header p {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 14px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .button-group button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #result a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* iPhone 12/13/14 Pro (390px) */
+@media (max-width: 390px) {
+  header h1 {
+    font-size: 21px;
+  }
+
+  header p {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  .button-group button {
+    font-size: 15px;
+  }
+}
+
+/* iPhone 12/13/14 Pro Max (430px) */
+@media (max-width: 430px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 18px;
+  }
+}
