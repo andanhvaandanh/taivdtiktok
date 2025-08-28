@@ -280,3 +280,11 @@ footer {
     padding: 18px;
   }
 }
+
+/* Logo mặc định */
+.logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
